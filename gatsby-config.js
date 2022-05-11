@@ -10,7 +10,24 @@ module.exports = {
     siteUrl: `https://loopcake.com/`,
     siteDescription: `Explloring the digital world, one bit at a time`,
     siteLanguage: `en`,
-    siteImage: `/loopcake-logo-v3.png`,
+    siteImage: `/loopcake-background-logov1.jpg`,
     author: `LoopCake`,
   },
+  plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `sections`,
+        path: `${__dirname}/src/sections`,
+      },
+    },
+    mdx && {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        lessBabel: true,
+      },
+    },
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-theme-ui`,
+  ].filter(Boolean),
 };
