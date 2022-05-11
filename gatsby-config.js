@@ -8,26 +8,47 @@ module.exports = {
     siteTitleAlt: `LoopCake - Here To Explore The Digital World`,
     siteHeadline: `LoopCake - Here To Explore The Digital World`,
     siteUrl: `https://loopcake.com/`,
-    siteDescription: `Explloring the digital world, one bit at a time`,
+    siteDescription: `Exploring the digital world, one bit at a time`,
     siteLanguage: `en`,
     siteImage: `/loopcake-background-logov1.jpg`,
     author: `LoopCake`,
   },
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `@lekoarts/gatsby-theme-cara`,
+      options: {},
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `sections`,
-        path: `${__dirname}/src/sections`,
+        name: `LoopCake - Here To Explore The Digital World`,
+        short_name: `LoopCake`,
+        description: `Exploring the digital world, one bit at a time`,
+        start_url: `/`,
+        background_color: `#141821`,
+        display: `standalone`,
+        icons: [
+          {
+            src: `/favicon.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `/favicon.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+        ],
       },
     },
-    mdx && {
-      resolve: `gatsby-plugin-mdx`,
+    `gatsby-plugin-gatsby-cloud`,
+    shouldAnalyseBundle && {
+      resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
       options: {
-        lessBabel: true,
+        analyzerMode: `static`,
+        reportFilename: `_bundle.html`,
+        openAnalyzer: false,
       },
     },
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-theme-ui`,
   ].filter(Boolean),
 };
