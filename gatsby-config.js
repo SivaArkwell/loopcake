@@ -10,7 +10,7 @@ module.exports = {
     siteUrl: `https://loopcake.com/`,
     siteDescription: `Explloring the digital world, one bit at a time`,
     siteLanguage: `en`,
-    siteImage: `/loopcake-v2.gif`,
+    siteImage: `/loopcake-logo-v3.png`,
     author: `LoopCake`,
   },
 };
